@@ -1,3 +1,5 @@
+**Forked from**: https://github.com/raphaelbauer/dokku-keycloak
+
 # Deploy Keycloak to Dokku
 
 This works for
@@ -30,6 +32,7 @@ In CLI commands this will look roughly that way
 dokku apps:create keycloak
 dokku config:set keycloak KC_HOSTNAME=keycloak.example.com
 dokku config:set keycloak KEYCLOAK_ADMIN=admin KEYCLOAK_ADMIN_PASSWORD=YOUR_VERY_SECRET_AND_LONG_PASSWORD
+dokku config:set keycloak KC_HTTP_PORT=80 KC_HTTPS_PORT=443
 dokku postgres:create keycloakdb
 dokku postgres:link keycloakdb keycloak
 dokku domains:add keycloak keycloak.example.com
